@@ -1,0 +1,19 @@
+{
+	"manifest_version": 3,
+	"name": "Edge Environment Simulator",
+	"version": "1.0",
+	"description": "Simulates Edge browser environment by injecting isEdge() function",
+	"permissions": ["activeTab"],
+	"host_permissions": ["<all_urls>"],
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content.js"],
+			"run_at": "document_start",
+			"world": "MAIN"
+		}
+	],
+	"background": {
+		"service_worker": "background.js"
+	}
+}

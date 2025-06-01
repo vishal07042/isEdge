@@ -14,4 +14,3 @@ try {
 } catch (e) {
 	console.log("Failed to make isEdge non-writable:", e);
 }
-

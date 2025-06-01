@@ -1,10 +1,12 @@
 {
+	"name": "LeetCode Forcer",
+	"version": "2.0.7",
+	"description": "An extension which force you to solve daily leetcode problem. Say no to procrastination.",
 	"manifest_version": 3,
-	"name": "Edge Environment Simulator",
-	"version": "1.0",
-	"description": "Simulates Edge browser environment by injecting isEdge() function",
-	"permissions": ["activeTab"],
-	"host_permissions": ["<all_urls>"],
+	"action": {
+		"default_icon": "images/icon.png",
+		"default_popup": "popup.html"
+	},
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
@@ -13,7 +15,10 @@
 			"world": "MAIN"
 		}
 	],
+	"permissions": ["tabs", "storage", "activeTab"],
+	"host_permissions": ["https://*/", "<all_urls>"],
 	"background": {
-		"service_worker": "background.js"
+		"service_worker": "background.js",
+		"type": "module"
 	}
 }
